@@ -1,0 +1,201 @@
+{
+  "Metadata": {
+    "title": "iGadget Pasdaran | 30 Years of Honest Mobile & Gadget Service",
+    "description": "Buy, sell, repair, and get practical mobile advice from iGadget Pasdaran, backed by nearly 30 years of honest service and transparent pricing.",
+    "keywords": "mobile store Pasdaran,phone repair,buy and sell phones,mobile accessories,iGadget",
+    "siteName": "iGadget Pasdaran",
+    "openGraphTitle": "iGadget — experience you can trust",
+    "openGraphDescription": "Nearly 30 years of honest help with buying, selling, and repairing mobile devices and gadgets.",
+    "imageAlt": "iGadget Pasdaran logo"
+  },
+  "Common": {
+    "skipToContent": "Skip to main content",
+    "brandName": "iGadget",
+    "brandTagline": "Pasdaran",
+    "localeSwitchLabel": "تغییر زبان به فارسی",
+    "localeSwitchText": "فا"
+  },
+  "Navigation": {
+    "ariaLabel": "Main navigation",
+    "story": "Our story",
+    "services": "Services",
+    "trust": "Why us",
+    "memories": "Stories",
+    "contact": "Contact",
+    "call": "Contact the store"
+  },
+  "Hero": {
+    "eyebrow": "Nearly three decades by your side",
+    "title": "30 years of <accent>honest service and trust</accent> in mobile and gadgets",
+    "description": "We are not here to push a product. We listen first, explain clearly, and help you make a choice that genuinely fits the way you use your device.",
+    "primaryCta": "Contact the store",
+    "secondaryCta": "View services",
+    "assurance": "A clear answer before every decision",
+    "robotAriaLabel": "iGadget's friendly robot mascot waving",
+    "floatingNote": "Choose with confidence",
+    "stats": {
+      "experience": {
+        "value": "30",
+        "label": "years of experience"
+      },
+      "services": {
+        "value": "6",
+        "label": "specialist services"
+      },
+      "promise": {
+        "value": "Clear",
+        "label": "from advice to delivery"
+      }
+    }
+  },
+  "Robot": {
+    "ariaLabel": "iGadget robot companion",
+    "companion": {
+      "story": "Our story starts with trust.",
+      "services": "Choose the service you actually need.",
+      "repair": "We explain everything before a repair.",
+      "trade": "There is no rush when buying or selling.",
+      "contact": "Talk to us whenever you are ready."
+    }
+  },
+  "Story": {
+    "eyebrow": "The iGadget story",
+    "title": "This trust was not built overnight",
+    "descriptionOne": "Nearly 30 years in the mobile market means seeing generations of devices, brands, and technologies come and go. What has not changed is our responsibility toward each customer's decision and budget.",
+    "descriptionTwo": "Sometimes the right advice is not to buy a new phone. Repairing your current device, choosing a simpler model, or waiting a little longer may be the better decision. We will tell you when it is.",
+    "yearsValue": "30",
+    "yearsLabel": "years of real experience",
+    "quote": "Trust is not a marketing line for us. It is the result of every clear explanation and every promise we have kept.",
+    "values": {
+      "listen": "Listen first",
+      "explain": "Explain clearly",
+      "decide": "Decide with confidence"
+    }
+  },
+  "Services": {
+    "eyebrow": "Store services",
+    "title": "Everything your phone and gadgets need",
+    "description": "From a quick question to a specialist repair, we keep the process short and understandable.",
+    "cards": {
+      "trade": {
+        "number": "01",
+        "title": "Buy & sell phones",
+        "description": "A fair device assessment and a clear explanation of its real value, without pressure to make a deal."
+      },
+      "repair": {
+        "number": "02",
+        "title": "Hardware repair",
+        "description": "Careful diagnosis and an upfront quote, focused on sound repairs rather than needless replacement."
+      },
+      "software": {
+        "number": "03",
+        "title": "Software services",
+        "description": "Troubleshooting, secure data transfer, and device setup with a clear explanation of each step."
+      },
+      "accessories": {
+        "number": "04",
+        "title": "Accessories",
+        "description": "Compatible, durable options selected around your real usage and budget."
+      },
+      "consultation": {
+        "number": "05",
+        "title": "Buying advice",
+        "description": "An unbiased comparison based on what you need, not simply what happens to be on the shelf."
+      },
+      "healthCheck": {
+        "number": "06",
+        "title": "Device health check",
+        "description": "A check of the phone's key systems before you buy, sell, or repair it."
+      }
+    }
+  },
+  "TrustSignals": {
+    "eyebrow": "Why trust us?",
+    "title": "A few simple principles we take seriously",
+    "description": "Trust grows from small, consistent actions — the things that should feel natural on every visit.",
+    "items": {
+      "experience": {
+        "number": "01",
+        "title": "Nearly 30 years of experience",
+        "description": "Experience that supports better diagnosis and more realistic recommendations."
+      },
+      "fairPricing": {
+        "number": "02",
+        "title": "Fair pricing",
+        "description": "We state the price and your options clearly, so comparing and deciding stays simple."
+      },
+      "transparentRepair": {
+        "number": "03",
+        "title": "Clarity before repair",
+        "description": "No surprise work or vague charges. We review the problem and solution with you first."
+      },
+      "realGuidance": {
+        "number": "04",
+        "title": "Real advice, never a hard sell",
+        "description": "If keeping or repairing your current device is better for you, that is what we recommend."
+      }
+    }
+  },
+  "Testimonials": {
+    "eyebrow": "Customer memories",
+    "title": "Trust lives on in people's experiences",
+    "description": "This section currently contains sample copy and is ready to be replaced with verified customer stories.",
+    "placeholderLabel": "Sample copy",
+    "items": {
+      "first": {
+        "name": "Long-time local customer",
+        "relation": "Visiting iGadget for many years",
+        "quote": "I come back because the advice is honest. Even when I did not need to buy something new, they said so clearly."
+      },
+      "second": {
+        "name": "Repair customer",
+        "relation": "Device service and diagnosis",
+        "quote": "They explained the issue and cost in plain language before doing anything. The final decision genuinely felt like mine."
+      },
+      "third": {
+        "name": "Phone buyer",
+        "relation": "Advice for choosing a device",
+        "quote": "They suggested the phone that fit my usage rather than the most expensive one. That is the kind of detail that builds trust."
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "Get in touch",
+    "title": "You can talk to us before you visit",
+    "description": "Call about availability, a repair, or a quick piece of advice. If there is a simple answer, we will tell you right away.",
+    "details": {
+      "phoneLabel": "Store phone",
+      "phoneValue": "+98 21 0000 0000",
+      "addressLabel": "Address",
+      "addressValue": "Pasdaran, Tehran — exact store address goes here",
+      "hoursLabel": "Working hours",
+      "hoursValue": "Saturday to Thursday, 10:00–20:00"
+    },
+    "callCta": "Call directly",
+    "whatsappCta": "Message on WhatsApp",
+    "telegramCta": "Telegram",
+    "map": {
+      "eyebrow": "Store location",
+      "title": "Pasdaran, Tehran",
+      "description": "A lightweight map and the exact address will appear here once the final store details are added.",
+      "placeholder": "Store map placeholder"
+    }
+  },
+  "Footer": {
+    "tagline": "Nearly 30 years of honest service in mobile and gadgets.",
+    "location": "Pasdaran, Tehran",
+    "rights": "All rights reserved for iGadget."
+  },
+  "StructuredData": {
+    "name": "iGadget Pasdaran",
+    "description": "A mobile and gadget store with nearly 30 years of experience in sales, repairs, and practical advice.",
+    "telephone": "+98-21-0000-0000",
+    "priceRange": "$$",
+    "address": {
+      "street": "Exact store address in Pasdaran",
+      "locality": "Tehran",
+      "region": "Tehran",
+      "country": "IR"
+    }
+  }
+}

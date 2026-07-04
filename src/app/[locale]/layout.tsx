@@ -5,6 +5,7 @@ import { routing } from "@i18n/routing";
 import "../globals.css";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@shared/config/site";
+import { layoutStyles } from "./layout-styles";
 
 type Props = {
   children: React.ReactNode;
@@ -86,13 +87,11 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={locale === "fa" ? "rtl" : "ltr"}
-      className="h-full scroll-smooth bg-canvas antialiased motion-reduce:scroll-auto"
+      className={layoutStyles.document}
     >
       <body
         className={
-          locale === "fa"
-            ? "min-w-80 overflow-x-hidden bg-canvas bg-[radial-gradient(circle_at_8%_7%,rgba(227,38,46,0.035),transparent_22rem)] font-sans leading-[1.75] text-ink [text-rendering:optimizeLegibility]"
-            : "min-w-80 overflow-x-hidden bg-canvas bg-[radial-gradient(circle_at_8%_7%,rgba(227,38,46,0.035),transparent_22rem)] font-english leading-[1.65] text-ink [text-rendering:optimizeLegibility]"
+          locale === "fa" ? layoutStyles.bodyFa : layoutStyles.bodyEn
         }
       >
         {children}

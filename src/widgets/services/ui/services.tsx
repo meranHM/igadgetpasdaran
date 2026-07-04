@@ -3,8 +3,7 @@ import { serviceIds } from "@entities/service/model/services";
 import { ServiceCard } from "@entities/service/ui/service-card";
 import type { RobotPose } from "@entities/robot/model/types";
 import { SectionHeading } from "@shared/ui/section-heading";
-import { pageSectionClassName } from "@shared/ui/styles";
-import { cn } from "@shared/lib/cn";
+import { servicesStyles } from "./services-styles";
 
 const robotPoseByService: Record<(typeof serviceIds)[number], RobotPose> = {
   trade: "trade",
@@ -16,12 +15,12 @@ const robotPoseByService: Record<(typeof serviceIds)[number], RobotPose> = {
 };
 
 const placementByService: Record<(typeof serviceIds)[number], string> = {
-  trade: "sm:[grid-area:1/1]",
-  repair: "sm:[grid-area:2/2]",
-  software: "sm:[grid-area:1/2]",
-  accessories: "sm:[grid-area:2/1]",
-  consultation: "sm:[grid-area:3/1]",
-  healthCheck: "sm:[grid-area:3/2]",
+  trade: servicesStyles.tradeCard,
+  repair: servicesStyles.repairCard,
+  software: servicesStyles.softwareCard,
+  accessories: servicesStyles.accessoriesCard,
+  consultation: servicesStyles.consultationCard,
+  healthCheck: servicesStyles.healthCheckCard,
 };
 
 export async function Services() {
@@ -30,7 +29,7 @@ export async function Services() {
   return (
     <section
       id="services"
-      className={cn(pageSectionClassName, "border-t border-line")}
+      className={servicesStyles.root}
     >
       <SectionHeading
         eyebrow={t("eyebrow")}
@@ -38,7 +37,7 @@ export async function Services() {
         description={t("description")}
       />
 
-      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className={servicesStyles.grid}>
         {serviceIds.map((id) => (
           <ServiceCard
             key={id}

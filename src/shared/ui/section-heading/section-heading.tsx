@@ -6,6 +6,8 @@ type SectionHeadingProps = {
   tone?: "light" | "dark";
 };
 
+import { sectionHeadingStyles } from "./section-heading-styles";
+
 export function SectionHeading({
   eyebrow,
   title,
@@ -16,27 +18,27 @@ export function SectionHeading({
   return (
     <header
       className={cn(
-        "max-w-[45rem]",
-        align === "center" && "mx-auto text-center",
+        sectionHeadingStyles.root,
+        align === "center" && sectionHeadingStyles.centered,
       )}
     >
       <p
         className={cn(
-          eyebrowClassName,
-          tone === "dark" ? "text-[#ff5b62]" : "text-accent",
+          sectionHeadingStyles.eyebrow,
+          tone === "dark" ? sectionHeadingStyles.eyebrowDark : sectionHeadingStyles.eyebrowLight,
         )}
       >
         {eyebrow}
       </p>
-      <h2 className="m-0 max-w-[43.125rem] text-[clamp(2rem,4vw,3.5rem)] leading-[1.2] font-black tracking-[-0.045em] rtl:tracking-[-0.035em] max-sm:text-[clamp(1.9rem,9vw,2.7rem)]">
+      <h2 className={cn(sectionHeadingStyles.title)}>
         {title}
       </h2>
       {description ? (
         <p
           className={cn(
-            "mt-5.5 max-w-[38.75rem] text-[1.03rem] leading-[1.95] max-sm:text-[0.92rem]",
-            align === "center" && "mx-auto",
-            tone === "dark" ? "text-[#aaa8a2]" : "text-muted",
+            sectionHeadingStyles.description,
+            align === "center" && sectionHeadingStyles.centered,
+            tone === "dark" ? sectionHeadingStyles.descriptionDark : sectionHeadingStyles.descriptionLight,
           )}
         >
           {description}
@@ -46,4 +48,3 @@ export function SectionHeading({
   );
 }
 import { cn } from "@shared/lib/cn";
-import { eyebrowClassName } from "@shared/ui/styles";

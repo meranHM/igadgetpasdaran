@@ -1,4 +1,5 @@
 import type { ServiceId } from "@entities/service/model/services";
+import { serviceIconStyles } from "./service-icon-styles";
 
 type ServiceIconProps = {
   type: ServiceId;
@@ -9,8 +10,7 @@ export function ServiceIcon({ type }: ServiceIconProps) {
     viewBox: "0 0 32 32",
     "aria-hidden": true,
     focusable: false,
-    className:
-      "size-7.5 fill-none stroke-current [stroke-linecap:round] [stroke-linejoin:round] [stroke-width:1.7]",
+    className: serviceIconStyles.root,
   };
 
   if (type === "trade") {

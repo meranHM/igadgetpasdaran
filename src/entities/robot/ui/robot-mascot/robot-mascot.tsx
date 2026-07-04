@@ -1,4 +1,6 @@
 import type { RobotPose } from "@entities/robot/model/types";
+import { cn } from "@shared/lib/cn";
+import { robotMascotStyles } from "./robot-mascot-styles";
 
 type RobotMascotProps = {
   pose: RobotPose;
@@ -11,11 +13,11 @@ export function RobotMascot({
   pose,
   ariaLabel,
   decorative = false,
-  className = "",
+  className,
 }: RobotMascotProps) {
   return (
     <svg
-      className={`robot-mascot block w-full overflow-visible ${className}`}
+      className={cn(robotMascotStyles.root, className)}
       data-pose={pose}
       viewBox="0 0 280 320"
       role={decorative ? undefined : "img"}

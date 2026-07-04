@@ -3,16 +3,17 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@i18n/routing";
 import { createLocalBusinessJsonLd, serializeJsonLd } from "@shared/lib/json-ld";
-import { SiteHeader } from "@widgets/site-header/ui/site-header";
-import { Hero } from "@widgets/hero/ui/hero";
-import { TrustStory } from "@widgets/trust-story/ui/trust-story";
-import { Services } from "@widgets/services/ui/services";
-import { TrustSignals } from "@widgets/trust-signals/ui/trust-signals";
-import { Testimonials } from "@widgets/testimonials/ui/testimonials";
-import { Contact } from "@widgets/contact/ui/contact";
-import { RobotCompanion } from "@widgets/robot-companion/ui/robot-companion";
-import { SiteFooter } from "@widgets/site-footer/ui/site-footer";
+import { SiteHeader } from "@widgets/site-header/ui";
+import { Hero } from "@widgets/hero/ui";
+import { TrustStory } from "@widgets/trust-story/ui";
+import { Services } from "@widgets/services/ui";
+import { TrustSignals } from "@widgets/trust-signals/ui";
+import { Testimonials } from "@widgets/testimonials/ui";
+import { Contact } from "@widgets/contact/ui";
+import { RobotCompanion } from "@widgets/robot-companion/ui";
+import { SiteFooter } from "@widgets/site-footer/ui";
 import { Container } from "@shared/ui/container";
+import { pageStyles } from "./page-styles";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -33,7 +34,7 @@ export default async function Home({ params }: Props) {
   return (
     <>
       <a
-        className="fixed start-5 top-3 z-100 -translate-y-[160%] rounded-[0.625rem] bg-ink px-4 py-2.5 text-white transition-transform duration-180 focus:translate-y-0"
+        className={pageStyles.skipLink}
         href="#main-content"
       >
         {t("skipToContent")}
@@ -41,8 +42,8 @@ export default async function Home({ params }: Props) {
       <SiteHeader locale={locale} />
       <main id="main-content">
         <Hero />
-        <Container className="grid items-start min-[1081px]:grid-cols-[minmax(0,1fr)_11rem] min-[1081px]:gap-13">
-          <div className="min-w-0">
+        <Container className={pageStyles.contentLayout}>
+          <div className={pageStyles.content}>
             <TrustStory />
             <Services />
             <TrustSignals />

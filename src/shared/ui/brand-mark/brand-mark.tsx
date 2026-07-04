@@ -1,3 +1,6 @@
+import { cn } from "@shared/lib/cn";
+import { brandMarkStyles } from "./brand-mark-styles";
+
 type BrandMarkProps = {
   name: string;
   tagline: string;
@@ -6,19 +9,19 @@ type BrandMarkProps = {
 
 export function BrandMark({ name, tagline, compact = false }: BrandMarkProps) {
   return (
-    <span className="inline-flex items-center gap-2.75 leading-none">
+    <span className={brandMarkStyles.wrapper}>
       <span
         className={cn(
-          "grid shrink-0 place-items-center bg-accent text-[#171716] shadow-[0_8px_24px_rgba(227,38,46,0.2)]",
+          brandMarkStyles.symbol,
           compact
-            ? "size-10 basis-10 rounded-xl"
-            : "size-11.5 basis-11.5 rounded-[0.875rem] max-sm:size-10 max-sm:basis-10 max-sm:rounded-xl",
+            ? brandMarkStyles.symbolCompact
+            : brandMarkStyles.symbolDefault,
         )}
         aria-hidden="true"
       >
         <svg
           className={cn(
-            compact ? "size-[1.9375rem]" : "size-9 max-sm:size-[1.9375rem]",
+            compact ? brandMarkStyles.iconCompact : brandMarkStyles.iconDefault,
           )}
           viewBox="0 0 48 48"
           focusable="false"
@@ -29,15 +32,12 @@ export function BrandMark({ name, tagline, compact = false }: BrandMarkProps) {
           <path d="M17 32v6m14-6v6M9 25H5v7m34-7h4v7" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
         </svg>
       </span>
-      <span className="grid gap-1.25">
-        <strong className="text-[1.08rem] font-black max-sm:text-[0.94rem]">
-          {name}
-        </strong>
-        <small className="text-[0.67rem] font-semibold tracking-[0.08em] text-muted max-sm:text-[0.61rem]">
+      <span className={brandMarkStyles.text}>
+        <strong className={brandMarkStyles.name}>{name}</strong>
+        <small className={brandMarkStyles.tagline}>
           {tagline}
         </small>
       </span>
     </span>
   );
 }
-import { cn } from "@shared/lib/cn";

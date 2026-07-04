@@ -3,6 +3,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { BrandMark } from "@shared/ui/brand-mark";
 import { LocationIcon } from "@shared/ui/icons";
 import { Container } from "@shared/ui/container";
+import { siteFooterStyles } from "./site-footer-styles";
 
 export async function SiteFooter() {
   const locale = await getLocale();
@@ -10,8 +11,8 @@ export async function SiteFooter() {
   const footer = await getTranslations("Footer");
 
   return (
-    <footer className="mt-7.5 border-t border-line bg-[#f4f1eb]">
-      <Container className="grid grid-cols-[1fr_1.2fr_1fr] items-center gap-7.5 py-10.5 max-sm:grid-cols-1 max-sm:justify-items-center max-sm:text-center">
+    <footer className={siteFooterStyles.root}>
+      <Container className={siteFooterStyles.content}>
         <Link href={locale === "fa" ? "/" : "/en"} aria-label={common("brandName")}>
           <BrandMark
             name={common("brandName")}
@@ -19,15 +20,15 @@ export async function SiteFooter() {
             compact
           />
         </Link>
-        <p className="m-0 text-center text-[0.78rem] leading-[1.8] text-muted">
+        <p className={siteFooterStyles.tagline}>
           {footer("tagline")}
         </p>
-        <span className="inline-flex items-center justify-end gap-1.75 text-[0.75rem] font-bold text-muted max-sm:justify-center">
-          <LocationIcon className="size-4.5 text-accent" />
+        <span className={siteFooterStyles.location}>
+          <LocationIcon className={siteFooterStyles.locationIcon} />
           {footer("location")}
         </span>
       </Container>
-      <Container className="border-t border-line py-4 text-center text-[0.66rem] text-[#8b8881]">
+      <Container className={siteFooterStyles.copyright}>
         <span>{footer("rights")}</span>
       </Container>
     </footer>

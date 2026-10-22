@@ -22,6 +22,7 @@
   },
   "Navigation": {
     "ariaLabel": "Main navigation",
+    "menu": "Open navigation menu",
     "story": "Our story",
     "services": "Services",
     "trust": "Why us",
@@ -61,6 +62,87 @@
       "repair": "We explain everything before a repair.",
       "trade": "There is no rush when buying or selling.",
       "contact": "Talk to us whenever you are ready."
+    }
+  },
+  "About": {
+    "metadata": {
+      "title": "Our Story | iGadget Pasdaran",
+      "description": "Meet iGadget Pasdaran: nearly 30 years of mobile experience, honest advice, and clear explanations. Phones change. Our commitment to you stays the same."
+    },
+    "breadcrumb": {
+      "label": "Breadcrumb",
+      "home": "Home",
+      "current": "Our story"
+    },
+    "hero": {
+      "eyebrow": "A little about the people behind the counter",
+      "title": "Phones changed.",
+      "titleAccent": "Our promise stayed.",
+      "description": "From the first keypads to the screens we carry today, one thing has stayed with us: a good conversation comes before a good recommendation. This is the iGadget story.",
+      "readOn": "Get to know us",
+      "years": "~30",
+      "yearsLabel": "years of listening, learning, and helping you choose"
+    },
+    "memories": {
+      "eyebrow": "A tiny time machine",
+      "label": "Explore phone generations",
+      "hint": "Pick a generation. Which one brings back a memory?",
+      "keypad": {
+        "label": "Keypad days",
+        "title": "One more game of Snake?",
+        "description": "Little screens. Big memories. And a message worth pressing a key three times for.",
+        "screen": "Hello!"
+      },
+      "touch": {
+        "label": "First touch",
+        "title": "Suddenly, a world in your pocket.",
+        "description": "Our fingers learned to swipe. Our questions about choosing well stayed just as important.",
+        "screen": "Swipe to explore"
+      },
+      "today": {
+        "label": "Today",
+        "title": "Smarter phones. The same human care.",
+        "description": "More cameras, more choices. Still a simple question: what actually works for you?",
+        "screen": "What is next?"
+      }
+    },
+    "mascot": {
+      "label": "A surprise visit from the iGadget mascot",
+      "first": "I was here for the Snake game.",
+      "second": "Found me! I am the unofficial historian.",
+      "third": "New phone? I still have my old stories."
+    },
+    "story": {
+      "eyebrow": "The part that never gets old",
+      "title": "Technology moves on. Trust takes time.",
+      "approachTitle": "What a conversation with us looks like",
+      "principles": {
+        "listen": {
+          "number": "01",
+          "title": "First, tell us your story.",
+          "description": "How do you use your phone? What is bothering you? What budget feels comfortable? We start with your answers."
+        },
+        "explain": {
+          "number": "02",
+          "title": "Then, make the options clear.",
+          "description": "A repair, a different model, or keeping what you have: we explain the trade-offs and costs in everyday language."
+        },
+        "choose": {
+          "number": "03",
+          "title": "The last word is yours.",
+          "description": "Take your time, compare, and ask again. A choice should feel right to you, even if it means no purchase today."
+        }
+      },
+      "signature": "The iGadget way",
+      "footnote": "A simple principle, carried into every conversation."
+    },
+    "invitation": {
+      "eyebrow": "There is room for your story, too",
+      "title": "Every good choice starts with a conversation.",
+      "description": "A question about your next phone, a device that needs attention, or a little advice. Tell us what is on your mind.",
+      "contact": "Find a way to reach us",
+      "services": "Explore our services",
+      "note": "A clear answer. Time to think. The choice is yours."
     }
   },
   "Story": {

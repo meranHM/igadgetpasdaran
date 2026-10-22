@@ -45,3 +45,53 @@ export async function createLocalBusinessJsonLd(locale: string) {
 export function serializeJsonLd(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");
 }
+
+export async function createAboutPageJsonLd(locale: string) {
+  const t = await getTranslations({ locale, namespace: "About" });
+  const business = await getTranslations({
+    locale,
+    namespace: "StructuredData",
+  });
+  const homeUrl = new URL(locale === "fa" ? "/" : `/${locale}`, siteConfig.url)
+    .href;
+  const pageUrl = `${homeUrl.replace(/\/$/, "")}/about`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": `${pageUrl}#page`,
+        url: pageUrl,
+        name: t("metadata.title"),
+        description: t("metadata.description"),
+        inLanguage: locale,
+        about: {
+          "@type": "ElectronicsStore",
+          "@id": `${siteConfig.url}/#store`,
+          name: business("name"),
+          url: homeUrl,
+        },
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: t("breadcrumb.home"),
+            item: homeUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: t("breadcrumb.current"),
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}

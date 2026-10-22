@@ -5,6 +5,10 @@ export const phoneMemoriesStyles = {
   control:
     "min-h-10 cursor-pointer rounded-full px-4 text-[0.72rem] font-extrabold text-copy transition-colors hover:text-accent aria-pressed:bg-panel aria-pressed:text-panel-ink motion-reduce:transition-none max-sm:px-3",
   memory: "relative",
+  // Overlapping captions reserve the tallest variant at every locale and width.
+  captions: "grid",
+  caption: "min-w-0 [grid-area:1/1]",
+  inactiveCaption: "invisible",
   deviceStage: "relative mx-auto grid h-79 place-items-center",
   orbit: "absolute size-63 rounded-full border border-dashed border-accent/25",
   orbitDot:

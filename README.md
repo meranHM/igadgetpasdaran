@@ -21,6 +21,26 @@ bun run dev
 
 Persian is served at `/` and English at `/en`.
 
+## Architecture
+
+The dependency direction follows Feature-Sliced Design:
+
+```text
+app -> pages -> widgets -> features -> entities -> shared
+```
+
+Next.js route adapters stay in `src/app`. They handle route params, locale
+setup, and metadata, then import complete page compositions through
+`@pages/home` and `@pages/about`. These public APIs live in
+`src/_pages/{home,about}/index.ts`; each slice owns its UI and page styles.
+The `_pages` name follows the [FSD Next.js guide](https://fsd.how/docs/guides/tech/with-nextjs/)
+and avoids accidentally creating a Next.js Pages Router.
+
+Pages compose the existing widgets, features, entities, and shared UI. Slices
+may import lower layers or their own internals, but may not import another
+slice on the same layer. App and Shared contain segments rather than slices.
+The deprecated Processes layer is not used.
+
 ## Themes
 
 The header's dark mode switch follows the device color scheme until a visitor

@@ -1,3 +1,6 @@
+export const skipLinkClassName =
+  "fixed start-5 top-3 z-100 -translate-y-[160%] rounded-[0.625rem] border border-panel-line bg-panel px-4 py-2.5 text-panel-ink transition-transform duration-180 focus:translate-y-0";
+
 export const buttonBaseClassName =
   "inline-flex min-h-13.5 items-center justify-center gap-2.5 rounded-[0.9375rem] border border-transparent px-5.25 text-[0.9rem] leading-none font-extrabold transition-[transform,border-color,background-color,box-shadow] duration-180 hover:-translate-y-0.5 [&>svg]:size-5 [&>svg]:shrink-0 motion-reduce:transition-none";
 

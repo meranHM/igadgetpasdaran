@@ -60,25 +60,38 @@ bun run start
 Application code follows a Feature-Sliced Design-style dependency direction:
 
 ```text
-app -> processes -> widgets -> features -> entities -> shared
+app -> pages -> widgets -> features -> entities -> shared
 ```
 
-- Import only from the same layer or a layer to its right in the diagram.
-- `app` owns routing, layouts, page composition, global CSS, and metadata.
+- Import from lower layers or within the same slice. Do not import between
+  slices on the same layer. The `app` and `shared` layers have no slices and
+  their segments may import each other.
+- `src/app` owns Next.js routing adapters, layouts, global CSS, and metadata.
+  Route adapters await and validate params, set the request locale, and render
+  a page through its public API.
+- The Pages layer lives in `src/_pages` to avoid Next.js Pages Router discovery,
+  following the current FSD Next.js guide. Each page has its own slice, such as
+  `home` or `about`, with an `index.ts` public API and a `ui` segment containing
+  its widget composition and page-specific styles. Pages must not import from
+  `app` or from another page slice.
 - `widgets` contains complete page sections.
 - `features` contains reusable user behavior and interaction logic.
 - `entities` contains domain models and their UI.
 - `shared` contains generic UI, configuration, and utilities with no business
   layer dependencies.
-- `processes` is reserved for cross-feature, multi-page flows and is currently
-  intentionally empty.
-- Use the aliases in `tsconfig.json` (`@app`, `@widgets`, `@features`,
+- The Processes layer is deprecated in current FSD; keep routing and global
+  orchestration in `app`, and reusable interactions in `features`.
+- Use the aliases in `tsconfig.json` (`@app`, `@pages`, `@widgets`, `@features`,
   `@entities`, `@shared`, and `@i18n`) instead of long relative imports.
 - Use a slice's existing `index.ts` public entry point from outside that slice.
   Direct relative imports are appropriate for files within the same component
   folder.
 - Follow the existing kebab-case filenames, named component exports, and
   colocated `*-styles.ts` convention.
+
+Architecture references: [FSD layers](https://fsd.how/docs/reference/layers/),
+[Next.js integration](https://fsd.how/docs/guides/tech/with-nextjs/), and
+[public APIs](https://fsd.how/docs/reference/public-api/).
 
 ## Localization and content
 

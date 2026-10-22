@@ -115,8 +115,23 @@ export function PhoneMemories({ label, hint, eras }: PhoneMemoriesProps) {
             )}
           </div>
         </div>
-        <p className={phoneMemoriesStyles.title}>{active.title}</p>
-        <p className={phoneMemoriesStyles.description}>{active.description}</p>
+        <div className={phoneMemoriesStyles.captions}>
+          {eraKeys.map((key) => (
+            <div
+              key={key}
+              className={cn(
+                phoneMemoriesStyles.caption,
+                era !== key && phoneMemoriesStyles.inactiveCaption,
+              )}
+              aria-hidden={era !== key || undefined}
+            >
+              <p className={phoneMemoriesStyles.title}>{eras[key].title}</p>
+              <p className={phoneMemoriesStyles.description}>
+                {eras[key].description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
       <p className={phoneMemoriesStyles.hint}>{hint}</p>
     </div>

@@ -10,11 +10,12 @@ export const phoneMemoriesStyles = {
   caption: "min-w-0 [grid-area:1/1]",
   inactiveCaption: "invisible",
   deviceStage: "relative mx-auto grid h-79 place-items-center",
+  tilt: "absolute inset-0 z-1",
   orbit: "absolute size-63 rounded-full border border-dashed border-accent/25",
   orbitDot:
     "absolute top-14 start-[calc(50%_+_5.5rem)] size-3 rounded-full bg-accent shadow-[0_0_0_6px_var(--color-accent-soft)]",
   phone:
-    "relative z-1 flex flex-col items-center border-[5px] border-ink px-2 pb-3 shadow-soft",
+    "relative z-1 flex flex-col items-center border-[5px] border-ink px-2 pb-3 shadow-soft after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:bg-[radial-gradient(circle_at_var(--tilt-glare-x,50%)_var(--tilt-glare-y,50%),white,transparent_70%)] after:opacity-[var(--tilt-glare-opacity,0)] after:content-['']",
   retroPhone: "h-61 w-30 -rotate-10 rounded-[1.5rem] bg-surface-soft",
   keypad:
     "grid w-full grid-cols-3 gap-x-2 gap-y-1.5 px-1 pt-4 [&>span]:h-2.5 [&>span]:rounded-sm [&>span]:bg-ink/70",

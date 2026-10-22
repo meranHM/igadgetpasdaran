@@ -2,6 +2,7 @@
 
 import { useId, useState } from "react";
 import { cn } from "@shared/lib/cn";
+import { TiltedCard } from "@shared/ui/tilted-card";
 import { phoneMemoriesStyles } from "./phone-memories-styles";
 
 const eraKeys = ["keypad", "touch", "today"] as const;
@@ -50,70 +51,78 @@ export function PhoneMemories({ label, hint, eras }: PhoneMemoriesProps) {
         <div className={phoneMemoriesStyles.deviceStage} aria-hidden="true">
           <span className={phoneMemoriesStyles.orbit} />
           <span className={phoneMemoriesStyles.orbitDot} />
-          <div
-            className={cn(
-              phoneMemoriesStyles.phone,
-              era === "keypad"
-                ? phoneMemoriesStyles.retroPhone
-                : phoneMemoriesStyles[era],
-            )}
-            data-phone-era={era}
-          >
-            <span className={phoneMemoriesStyles.speaker} />
+          <TiltedCard className={phoneMemoriesStyles.tilt}>
             <div
               className={cn(
-                phoneMemoriesStyles.screen,
+                phoneMemoriesStyles.phone,
                 era === "keypad"
-                  ? phoneMemoriesStyles.retroScreen
-                  : phoneMemoriesStyles.modernScreen,
+                  ? phoneMemoriesStyles.retroPhone
+                  : phoneMemoriesStyles[era],
               )}
+              data-phone-era={era}
             >
-              <span className={phoneMemoriesStyles.signal}>
-                <svg viewBox="0 0 32 12" className="w-6" focusable="false">
-                  <path
-                    d="M2 11V8m6 3V6m6 5V3m6 8V1"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                  />
-                </svg>
-                <span className={phoneMemoriesStyles.battery} />
-              </span>
-              <span className={phoneMemoriesStyles.screenText}>
-                {active.screen}
-              </span>
+              <span className={phoneMemoriesStyles.speaker} />
+              <div
+                className={cn(
+                  phoneMemoriesStyles.screen,
+                  era === "keypad"
+                    ? phoneMemoriesStyles.retroScreen
+                    : phoneMemoriesStyles.modernScreen,
+                )}
+              >
+                <span className={phoneMemoriesStyles.signal}>
+                  <svg viewBox="0 0 32 12" className="w-6" focusable="false">
+                    <path
+                      d="M2 11V8m6 3V6m6 5V3m6 8V1"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                    />
+                  </svg>
+                  <span className={phoneMemoriesStyles.battery} />
+                </span>
+                <span className={phoneMemoriesStyles.screenText}>
+                  {active.screen}
+                </span>
+                {era === "keypad" ? (
+                  <svg viewBox="0 0 100 35" className="w-20" focusable="false">
+                    <path
+                      d="M10 25h30V10h25v15h20"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      strokeDasharray="5 2"
+                    />
+                    <rect
+                      x="84"
+                      y="6"
+                      width="5"
+                      height="5"
+                      fill="currentColor"
+                    />
+                  </svg>
+                ) : (
+                  <div className={phoneMemoriesStyles.apps}>
+                    {Array.from(
+                      { length: era === "touch" ? 6 : 9 },
+                      (_, index) => (
+                        <span key={index} />
+                      ),
+                    )}
+                  </div>
+                )}
+              </div>
               {era === "keypad" ? (
-                <svg viewBox="0 0 100 35" className="w-20" focusable="false">
-                  <path
-                    d="M10 25h30V10h25v15h20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="6"
-                    strokeDasharray="5 2"
-                  />
-                  <rect x="84" y="6" width="5" height="5" fill="currentColor" />
-                </svg>
-              ) : (
-                <div className={phoneMemoriesStyles.apps}>
-                  {Array.from(
-                    { length: era === "touch" ? 6 : 9 },
-                    (_, index) => (
-                      <span key={index} />
-                    ),
-                  )}
+                <div className={phoneMemoriesStyles.keypad}>
+                  {Array.from({ length: 12 }, (_, index) => (
+                    <span key={index} />
+                  ))}
                 </div>
+              ) : (
+                <span className={phoneMemoriesStyles.homeButton} />
               )}
             </div>
-            {era === "keypad" ? (
-              <div className={phoneMemoriesStyles.keypad}>
-                {Array.from({ length: 12 }, (_, index) => (
-                  <span key={index} />
-                ))}
-              </div>
-            ) : (
-              <span className={phoneMemoriesStyles.homeButton} />
-            )}
-          </div>
+          </TiltedCard>
         </div>
         <div className={phoneMemoriesStyles.captions}>
           {eraKeys.map((key) => (

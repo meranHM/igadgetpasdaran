@@ -4,7 +4,7 @@ import { routing } from "@i18n/routing";
 import { siteConfig } from "@shared/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ["/", "/about", "/services"].flatMap((href) => {
+  return ["/", "/about", "/services", "/contact-us"].flatMap((href) => {
     const languages = Object.fromEntries(
       routing.locales.map((locale) => [
         locale,

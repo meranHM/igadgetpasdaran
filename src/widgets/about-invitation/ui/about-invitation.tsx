@@ -23,7 +23,7 @@ export async function AboutInvitation() {
         <p className={aboutInvitationStyles.description}>{t("description")}</p>
         <div className={aboutInvitationStyles.actions}>
           <Link
-            href={getPathname({ locale, href: "/#contact" })}
+            href={getPathname({ locale, href: "/contact-us" })}
             className={aboutInvitationStyles.primaryButton}
           >
             <MessageIcon />

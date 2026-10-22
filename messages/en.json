@@ -1,4 +1,100 @@
 {
+  "ContactUs": {
+    "metadata": {
+      "title": "Contact us | iGadget Pasdaran",
+      "description": "Find ways to contact iGadget Pasdaran and prepare your first message about a phone, repair, or accessories. Contact and visit details are placeholders pending confirmation."
+    },
+    "breadcrumb": {
+      "label": "Breadcrumb",
+      "home": "Home",
+      "current": "Contact us"
+    },
+    "hero": {
+      "eyebrow": "A question is a good beginning",
+      "title": "Contact us.",
+      "titleAccent": "Start with a hello.",
+      "description": "Choosing a phone? Something not working? Or just not sure where to start? Pick a way to get in touch, and put your question into your own words."
+    },
+    "methods": {
+      "title": "Your conversation, your way.",
+      "placeholder": "Launch placeholder: the phone number and messaging links below are samples, awaiting confirmation. Please do not rely on them to reach the store yet.",
+      "badge": "Placeholder",
+      "phone": {
+        "title": "Talk it through",
+        "description": "Prefer a conversation? The store phone is a place to start with your question.",
+        "action": "Call the store"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Prefer to write it down? Put your question and device model in a message.",
+        "action": "Open WhatsApp"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "More at home on Telegram? Start the conversation in an app you know.",
+        "action": "Open Telegram"
+      }
+    },
+    "starter": {
+      "eyebrow": "A tiny nudge for the first message",
+      "title": "Skip the blank message bubble.",
+      "description": "Choose a topic, copy a starting point, then make it your own in your messaging app. Copying only saves text to your clipboard.",
+      "label": "What’s on your mind?",
+      "previewLabel": "Your conversation starter",
+      "copy": "Copy message",
+      "methodsLink": "Back to contact methods",
+      "noScript": "Topic selection and copying need JavaScript. You can select the sample text manually, and the contact links above still work.",
+      "topics": {
+        "phone": {
+          "label": "Choosing a phone",
+          "message": "Hello iGadget! I’m thinking about a phone and would like some advice. My priorities are… and my budget is… Which options could we discuss?"
+        },
+        "repair": {
+          "label": "A device problem",
+          "message": "Hello iGadget! I have a question about my phone. The model is… The problem is… and it started… What information would help us discuss the next step?"
+        },
+        "accessories": {
+          "label": "Finding accessories",
+          "message": "Hello iGadget! I’m looking for an accessory for… I’ll use it for… Could we talk about compatible options?"
+        },
+        "other": {
+          "label": "Something else",
+          "message": "Hello iGadget! I have a question: … Could you help me find a starting point?"
+        }
+      },
+      "feedback": {
+        "idle": "Add your details after pasting. A simple hello is enough to begin.",
+        "copying": "Copying your conversation starter…",
+        "copied": "Copied! Paste it into your messaging app and add your details.",
+        "error": "Copying isn’t available here. Select the message text and copy it manually."
+      }
+    },
+    "tips": {
+      "title": "A little context goes a long way.",
+      "device": "Mention the device model, if you know it. Comparing phones? Name the ones you have in mind.",
+      "question": "Describe what you need, or what happens when something goes wrong. Everyday words are welcome.",
+      "context": "Add what matters to you: how you use your phone, your budget, or what you’ve already tried.",
+      "note": "You don’t need to have the whole story ready. Start with the part you know."
+    },
+    "mascot": {
+      "label": "A surprise hello from the iGadget robot",
+      "first": "Even my best chats start with hello.",
+      "second": "Waving counts. A message works too!",
+      "third": "My phone has questions about your phone."
+    },
+    "visit": {
+      "eyebrow": "Thinking of stopping by?",
+      "title": "A place for the details, once confirmed.",
+      "description": "The store address and opening hours will be added here after confirmation. Visit information is not ready to use yet.",
+      "addressLabel": "Store address · placeholder",
+      "addressValue": "The exact address is awaiting confirmation.",
+      "hoursLabel": "Opening hours · placeholder",
+      "hoursValue": "Verified opening hours have not been added yet.",
+      "mapBadge": "Map placeholder",
+      "mapTitle": "The map comes after the pin is confirmed.",
+      "mapDescription": "This space is reserved for the verified store location. A map and directions will be available once the address is confirmed."
+    }
+  },
   "Metadata": {
     "title": "iGadget Pasdaran | 30 Years of Honest Mobile & Gadget Service",
     "description": "Buy, sell, repair, and get practical mobile advice from iGadget Pasdaran, backed by nearly 30 years of honest service and transparent pricing.",

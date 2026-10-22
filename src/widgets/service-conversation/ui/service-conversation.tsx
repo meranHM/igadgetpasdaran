@@ -44,7 +44,7 @@ export async function ServiceConversation() {
             </a>
             <Link
               className={styles.contact}
-              href={getPathname({ locale, href: "/#contact" })}
+              href={getPathname({ locale, href: "/contact-us" })}
             >
               {t("contact")}
               <ArrowIcon />

@@ -37,7 +37,11 @@ export async function SiteHeader({ locale, pathname = "/" }: SiteHeaderProps) {
     },
     { href: "/#why-us", label: navigation("trust") },
     { href: "/#memories", label: navigation("memories") },
-    { href: "/#contact", label: navigation("contact") },
+    {
+      href: "/contact-us",
+      label: navigation("contact"),
+      current: pathname === "/contact-us",
+    },
   ];
   const navigationLinks = links.map(({ href, label, current }) => (
     <Link

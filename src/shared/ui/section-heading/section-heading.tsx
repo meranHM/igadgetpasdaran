@@ -1,4 +1,5 @@
 type SectionHeadingProps = {
+  id?: string;
   eyebrow: string;
   title: string;
   description?: string;
@@ -9,6 +10,7 @@ type SectionHeadingProps = {
 import { sectionHeadingStyles } from "./section-heading-styles";
 
 export function SectionHeading({
+  id,
   eyebrow,
   title,
   description,
@@ -30,7 +32,7 @@ export function SectionHeading({
       >
         {eyebrow}
       </p>
-      <h2 className={cn(sectionHeadingStyles.title)}>
+      <h2 id={id} className={cn(sectionHeadingStyles.title)}>
         {title}
       </h2>
       {description ? (

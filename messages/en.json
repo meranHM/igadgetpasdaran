@@ -159,6 +159,98 @@
       "decide": "Decide with confidence"
     }
   },
+  "ServicesPage": {
+    "metadata": {
+      "title": "Services | iGadget Pasdaran",
+      "description": "Find your starting point at iGadget Pasdaran: phone buying and selling, hardware repair, software help, accessories, buying advice, and device health checks."
+    },
+    "breadcrumb": {
+      "label": "Breadcrumb",
+      "home": "Home",
+      "current": "Services"
+    },
+    "hero": {
+      "eyebrow": "Six services. A little less guesswork.",
+      "title": "Whatever brings you in.",
+      "titleAccent": "Let’s find a starting point.",
+      "description": "A phone that needs attention. A new device to choose. Or a question you haven’t quite put into words. Start with what you need; we’ll help you understand the options.",
+      "browse": "Explore all six services",
+      "contact": "Let’s talk it through",
+      "note": "You don’t need to know the technical name for a problem. Your own words are a good place to start."
+    },
+    "finder": {
+      "title": "The service switchboard",
+      "status": "Ready to help",
+      "label": "What brings you in?",
+      "hint": "Choose the closest match. This is a starting point for a conversation, not a device diagnosis.",
+      "resultLabel": "Your starting point",
+      "detailLink": "Take a closer look",
+      "options": {
+        "trade": {
+          "label": "Buying or selling",
+          "description": "Start with a device assessment and a clear conversation about value. No pressure to make a deal."
+        },
+        "repair": {
+          "label": "Something’s broken",
+          "description": "A hardware issue? Start with diagnosis and an explanation of the repair options and cost."
+        },
+        "software": {
+          "label": "Setup or software trouble",
+          "description": "For software problems, moving your data, or setting up a device, software services are a useful place to start."
+        },
+        "accessories": {
+          "label": "The right accessories",
+          "description": "Match an accessory to your device, your daily use, and your budget. Compatibility comes first."
+        },
+        "consultation": {
+          "label": "Too many phone choices",
+          "description": "Tell us what matters in your next phone. Buying advice helps you compare the options around your needs."
+        },
+        "healthCheck": {
+          "label": "Is this phone healthy?",
+          "description": "Before buying, selling, or repairing a phone, a check of its key systems can help you understand its condition."
+        }
+      }
+    },
+    "mascot": {
+      "label": "A surprise visit from your service switchboard helper",
+      "first": "Technical term: the thingy. I understand.",
+      "second": "Six services. Zero silly questions.",
+      "third": "Even robots ask for a second opinion."
+    },
+    "directory": {
+      "eyebrow": "The full picture",
+      "title": "Different needs. The same care.",
+      "description": "Here’s what each service is for, plus a useful first question to bring to the conversation. A recommendation starts with understanding your device and your priorities.",
+      "promptLabel": "A useful place to begin",
+      "discuss": "Talk it through",
+      "discussLabel": "Discuss {service}",
+      "prompts": {
+        "trade": "Which model are you buying or selling, and what condition is it in? Tell us what you have in mind.",
+        "repair": "What isn’t working, and when did it start? Mention any drop, damage, or previous repair you know about.",
+        "software": "What are you trying to do, and what happens instead? For data transfer, tell us which two devices are involved.",
+        "accessories": "Which device is it for, and how will you use it? Share the model so we can discuss compatible options.",
+        "consultation": "What do you use your phone for most? Your priorities and a comfortable budget make comparisons more useful.",
+        "healthCheck": "Are you buying, selling, or deciding about a repair? Tell us what you’d like to understand about the phone."
+      }
+    },
+    "conversation": {
+      "eyebrow": "A little preparation helps",
+      "title": "Bring the question. We’ll start there.",
+      "description": "No technical vocabulary needed. These details can make the first conversation easier.",
+      "checklist": {
+        "device": "The device model, if you know it. If you’re comparing phones, mention the models on your list.",
+        "story": "What’s happening, when it started, and anything you’ve already tried. Your observations are useful.",
+        "priorities": "What matters most to you: daily use, keeping your current phone, or a budget you’re comfortable with."
+      },
+      "contactEyebrow": "Still between two services?",
+      "contactTitle": "A conversation can connect the dots.",
+      "contactDescription": "Tell us what’s on your mind. We can talk through which service fits, and explain the options before you decide.",
+      "call": "Contact the store",
+      "contact": "Contact details & ways to reach us",
+      "placeholder": "Launch placeholder: the phone number and contact details are sample information pending confirmation."
+    }
+  },
   "Services": {
     "eyebrow": "Store services",
     "title": "Everything your phone and gadgets need",

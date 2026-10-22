@@ -30,7 +30,7 @@ export async function AboutInvitation() {
             {t("contact")}
           </Link>
           <Link
-            href={getPathname({ locale, href: "/#services" })}
+            href={getPathname({ locale, href: "/services" })}
             className={aboutInvitationStyles.secondaryButton}
           >
             {t("services")}

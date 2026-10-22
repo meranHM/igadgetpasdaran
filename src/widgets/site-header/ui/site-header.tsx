@@ -30,7 +30,11 @@ export async function SiteHeader({ locale, pathname = "/" }: SiteHeaderProps) {
       label: navigation("story"),
       current: pathname === "/about",
     },
-    { href: "/#services", label: navigation("services") },
+    {
+      href: "/services",
+      label: navigation("services"),
+      current: pathname === "/services",
+    },
     { href: "/#why-us", label: navigation("trust") },
     { href: "/#memories", label: navigation("memories") },
     { href: "/#contact", label: navigation("contact") },

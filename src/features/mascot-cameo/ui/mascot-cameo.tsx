@@ -14,9 +14,14 @@ const appearances = [
 type MascotCameoProps = {
   label: string;
   messages: [string, string, string];
+  contained?: boolean;
 };
 
-export function MascotCameo({ label, messages }: MascotCameoProps) {
+export function MascotCameo({
+  label,
+  messages,
+  contained = false,
+}: MascotCameoProps) {
   const [appearance, setAppearance] = useState(0);
 
   useEffect(() => {
@@ -28,6 +33,44 @@ export function MascotCameo({ label, messages }: MascotCameoProps) {
   }, []);
 
   const { pose, position } = appearances[appearance];
+
+  if (contained) {
+    return (
+      <aside
+        aria-label={label}
+        className={mascotCameoStyles.contained}
+        data-mascot-cameo={position}
+      >
+        <div
+          className={cn(
+            mascotCameoStyles.figure,
+            mascotCameoStyles.alignment[position],
+          )}
+        >
+          <div className={mascotCameoStyles.messages}>
+            {messages.map((message, index) => (
+              <p
+                key={index}
+                aria-hidden={index !== appearance || undefined}
+                className={cn(
+                  mascotCameoStyles.message,
+                  mascotCameoStyles.caption,
+                  index !== appearance && "invisible",
+                )}
+              >
+                {message}
+              </p>
+            ))}
+          </div>
+          <RobotMascot
+            pose={pose}
+            decorative
+            className={mascotCameoStyles.robot}
+          />
+        </div>
+      </aside>
+    );
+  }
 
   return (
     <aside

@@ -1,4 +1,13 @@
 export const mascotCameoStyles = {
+  contained: "relative grid overflow-hidden px-5 pt-5",
+  figure: "flex w-36 flex-col items-center max-sm:w-29",
+  alignment: {
+    start: "justify-self-start",
+    end: "justify-self-end",
+    middle: "justify-self-center",
+  },
+  messages: "grid w-full",
+  caption: "min-w-0 [grid-area:1/1]",
   root: "absolute bottom-0 z-10 flex w-36 flex-col items-center max-sm:w-29",
   start: "start-1 -rotate-8",
   end: "end-1 rotate-8",

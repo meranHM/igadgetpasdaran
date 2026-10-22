@@ -1,4 +1,6 @@
-import { getTranslations } from "next-intl/server";
+import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
+import { getPathname } from "@i18n/navigation";
 import { RobotMascot } from "@entities/robot/ui/robot-mascot";
 import { ArrowIcon, CheckIcon, PhoneIcon } from "@shared/ui/icons";
 import { siteConfig } from "@shared/config/site";
@@ -8,6 +10,7 @@ const statKeys = ["experience", "services", "promise"] as const;
 
 export async function Hero() {
   const t = await getTranslations("Hero");
+  const locale = (await getLocale()) === "fa" ? "fa" : "en";
 
   return (
     <section className={heroStyles.root} data-robot-pose-zone="hero">
@@ -37,10 +40,13 @@ export async function Hero() {
             <PhoneIcon />
             {t("primaryCta")}
           </a>
-          <a className={heroStyles.secondaryButton} href="#services">
+          <Link
+            className={heroStyles.secondaryButton}
+            href={getPathname({ locale, href: "/services" })}
+          >
             {t("secondaryCta")}
             <ArrowIcon />
-          </a>
+          </Link>
         </div>
 
         <p className={heroStyles.assurance}>

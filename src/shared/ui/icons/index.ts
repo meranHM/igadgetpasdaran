@@ -5,6 +5,8 @@ export {
   ExternalArrowIcon,
   LocationIcon,
   MessageIcon,
+  MoonIcon,
   PhoneIcon,
   QuoteIcon,
+  SunIcon,
 } from "./icons";

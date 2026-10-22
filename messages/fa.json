@@ -15,6 +15,11 @@
     "localeSwitchLabel": "تغییر زبان به انگلیسی",
     "localeSwitchText": "EN"
   },
+  "Theme": {
+    "label": "حالت تیره",
+    "switchToLight": "تغییر به حالت روشن",
+    "switchToDark": "تغییر به حالت تیره"
+  },
   "Navigation": {
     "ariaLabel": "ناوبری اصلی",
     "story": "داستان ما",

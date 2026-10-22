@@ -21,6 +21,26 @@ bun run dev
 
 Persian is served at `/` and English at `/en`.
 
+## Themes
+
+The header's dark mode switch follows the device color scheme until a visitor
+chooses a theme. That choice is stored in `localStorage` under `igadget-theme`
+and shared across locales, visits, and tabs. Removing the key and reloading
+restores device preference tracking. If storage is blocked, switching still
+works for the current page; without JavaScript, the theme follows the device
+preference.
+
+Theme behavior lives in `src/features/theme-toggle`. Its inline head script
+applies the theme before first paint while keeping locale routes static. Only
+the switch is a Client Component; its labels are translated on the server.
+The root's `suppressHydrationWarning` covers the script's `data-theme` attribute.
+
+Palette, illustration, and shadow tokens live in `src/app/globals.css`. Use
+`ink`, `copy`, and `muted` for text on the page's surfaces; `panel` and
+`panel-*` for the permanently dark panels. The brighter dark-mode `accent`
+is for text and decoration; `action` and `action-hover` preserve contrast with
+white button labels. Keep new surfaces and text on these semantic tokens.
+
 ## Checks
 
 ```bash

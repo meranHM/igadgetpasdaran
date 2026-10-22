@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { getPathname } from "@i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { BrandMark } from "@shared/ui/brand-mark";
 import { PhoneIcon } from "@shared/ui/icons";
 import { siteConfig } from "@shared/config/site";
 import { Container } from "@shared/ui/container";
+import { ThemeToggle } from "@features/theme-toggle";
 import { siteHeaderStyles } from "./site-header-styles";
 
 type SiteHeaderProps = {
@@ -13,8 +15,14 @@ type SiteHeaderProps = {
 export async function SiteHeader({ locale }: SiteHeaderProps) {
   const common = await getTranslations("Common");
   const navigation = await getTranslations("Navigation");
-  const homeHref = locale === "fa" ? "/" : "/en";
-  const localeHref = locale === "fa" ? "/en" : "/";
+  const currentLocale = locale === "fa" ? "fa" : "en";
+  const homeHref = getPathname({ locale: currentLocale, href: "/" });
+  // A prefixed URL lets the proxy update the locale cookie before redirecting.
+  const localeHref = getPathname({
+    locale: currentLocale === "fa" ? "en" : "fa",
+    href: "/",
+    forcePrefix: true,
+  });
 
   return (
     <header className={siteHeaderStyles.root}>
@@ -49,10 +57,12 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
         </nav>
 
         <div className={siteHeaderStyles.actions}>
+          <ThemeToggle />
           <Link
             className={siteHeaderStyles.localeLink}
             href={localeHref}
-            hrefLang={locale === "fa" ? "en" : "fa"}
+            hrefLang={currentLocale === "fa" ? "en" : "fa"}
+            prefetch={false}
             aria-label={common("localeSwitchLabel")}
           >
             {common("localeSwitchText")}

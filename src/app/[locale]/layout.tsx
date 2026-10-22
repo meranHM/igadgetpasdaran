@@ -5,6 +5,7 @@ import { routing } from "@i18n/routing";
 import "../globals.css";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@shared/config/site";
+import { ThemeScript } from "@features/theme-toggle";
 import { layoutStyles } from "./layout-styles";
 
 type Props = {
@@ -88,7 +89,11 @@ export default async function LocaleLayout({
       lang={locale}
       dir={locale === "fa" ? "rtl" : "ltr"}
       className={layoutStyles.document}
+      suppressHydrationWarning
     >
+      <head>
+        <ThemeScript />
+      </head>
       <body
         className={
           locale === "fa" ? layoutStyles.bodyFa : layoutStyles.bodyEn

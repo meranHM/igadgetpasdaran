@@ -15,6 +15,11 @@
     "localeSwitchLabel": "تغییر زبان به فارسی",
     "localeSwitchText": "فا"
   },
+  "Theme": {
+    "label": "Dark mode",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
   "Navigation": {
     "ariaLabel": "Main navigation",
     "story": "Our story",

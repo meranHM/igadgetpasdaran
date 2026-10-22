@@ -18,12 +18,12 @@ export const testimonialStyles = {
   cardHeader: "flex items-center justify-between",
   quoteIcon: "size-7.75 text-accent",
   placeholderLabel:
-    "rounded-full bg-surface-soft px-2.25 py-1.25 text-[0.63rem] font-extrabold text-[#8a877f]",
+    "rounded-full bg-surface-soft px-2.25 py-1.25 text-[0.63rem] font-extrabold text-muted",
   quote:
-    "my-7.5 flex-1 text-[0.9rem] leading-8 font-semibold text-[#45433f]",
+    "my-7.5 flex-1 text-[0.9rem] leading-8 font-semibold text-copy",
   caption: "flex items-center gap-2.75 border-t border-line pt-4.5",
   avatar:
-    "grid size-10 shrink-0 place-items-center rounded-[0.8125rem] bg-ink text-[0.8rem] font-black text-white",
+    "grid size-10 shrink-0 place-items-center rounded-[0.8125rem] border border-panel-line bg-panel text-[0.8rem] font-black text-panel-ink",
   customer: "grid gap-1",
   customerName: "text-[0.76rem] font-extrabold",
   customerRelation: "text-[0.64rem] text-muted",

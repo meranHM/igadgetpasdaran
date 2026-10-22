@@ -1,24 +1,61 @@
 @import "tailwindcss";
 
 @custom-variant en (&:lang(en));
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme]), :root:not([data-theme]) *) {
+      @slot;
+    }
+  }
+}
 
 @theme {
   --color-canvas: #faf9f6;
   --color-surface: #ffffff;
   --color-surface-soft: #f4f2ed;
   --color-ink: #181817;
+  --color-copy: #55534e;
   --color-muted: #6f6d68;
   --color-line: #e7e3dc;
   --color-accent: #e3262e;
-  --color-accent-dark: #b9161e;
   --color-accent-soft: #fff0f0;
+  --color-accent-strong: #8d3438;
+  --color-action: #e3262e;
+  --color-action-hover: #b9161e;
+  --color-panel: #181817;
+  --color-panel-ink: #ffffff;
+  --color-panel-muted: #aaa8a2;
+  --color-panel-accent: #ff5b62;
+  --color-panel-line: #ffffff1f;
+  --color-footer: #f4f1eb;
+  --color-success: #25834d;
+  --color-success-soft: #e9f5ed;
+  --color-map: #f0ede7;
+  --color-robot-shell: #1b1b1a;
+  --color-robot-face: #1b1b1a;
+  --color-robot-detail: #ffffff;
+  --color-shadow-soft: rgba(31, 28, 24, 0.08);
+  --color-shadow-card: rgba(31, 28, 24, 0.06);
+  --color-hero-inset: rgba(255, 255, 255, 0.82);
+
+  --background-image-hero: radial-gradient(
+      circle at 55% 42%, #fff 0 18%, transparent 55%
+    ), linear-gradient(145deg, #fff5f4 0%, #f2eee8 72%);
+  --background-image-map: linear-gradient(
+    120deg, rgba(239, 236, 230, 0.2), rgba(227, 38, 46, 0.05)
+  );
 
   --font-sans: "Vazirmatn", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
   --font-english: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 
-  --shadow-soft: 0 18px 55px rgba(31, 28, 24, 0.08);
-  --shadow-card: 0 12px 36px rgba(31, 28, 24, 0.06);
+  /* Tailwind expands shadow geometry; color variables keep it theme-aware. */
+  --shadow-soft: 0 18px 55px var(--color-shadow-soft);
+  --shadow-card: 0 12px 36px var(--color-shadow-card);
+  --shadow-hero-inset: inset 0 0 80px var(--color-hero-inset);
 
   --transition-duration-180: 180ms;
   --transition-duration-220: 220ms;
@@ -26,6 +63,48 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+
+    /* One palette serves explicit dark mode and the no-JavaScript system fallback. */
+    @variant dark {
+      color-scheme: dark;
+      --color-canvas: #151514;
+      --color-surface: #20201e;
+      --color-surface-soft: #292925;
+      --color-ink: #f2f0ea;
+      --color-copy: #d2cfc7;
+      --color-muted: #aba89f;
+      --color-line: #3c3b35;
+      --color-accent: #ff6b72;
+      --color-accent-soft: #392427;
+      --color-accent-strong: #ffb0b5;
+      --color-action: #d92c36;
+      --color-action-hover: #be1f29;
+      --color-panel: #10100f;
+      --color-panel-ink: #f2f0ea;
+      --color-panel-muted: #b4b0a6;
+      --color-panel-accent: #ff7b82;
+      --color-panel-line: #3c3b35;
+      --color-footer: #1b1b19;
+      --color-success: #83d9a2;
+      --color-success-soft: #20382a;
+      --color-map: #272823;
+      --color-robot-shell: #aaa99f;
+      --color-robot-face: #2b2c29;
+      --color-robot-detail: #20201e;
+      --background-image-hero: radial-gradient(
+          circle at 55% 42%, #35322c 0 18%, transparent 55%
+        ), linear-gradient(145deg, #302426 0%, #22231f 72%);
+      --background-image-map: linear-gradient(
+        120deg, rgba(48, 49, 42, 0.2), rgba(227, 38, 46, 0.05)
+      );
+      --color-shadow-soft: rgba(0, 0, 0, 0.22);
+      --color-shadow-card: rgba(0, 0, 0, 0.18);
+      --color-hero-inset: rgba(0, 0, 0, 0.16);
+    }
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -37,12 +116,12 @@
   }
 
   :focus-visible {
-    outline: 3px solid rgba(227, 38, 46, 0.32);
+    outline: 3px solid var(--color-accent);
     outline-offset: 4px;
   }
 
   ::selection {
-    background: rgba(227, 38, 46, 0.16);
+    background: color-mix(in oklab, var(--color-accent) 16%, transparent);
     color: var(--color-ink);
   }
 }
@@ -68,7 +147,7 @@
 
 .robot-mascot__antenna {
   fill: none;
-  stroke: #20201f;
+  stroke: var(--color-robot-shell);
   stroke-linecap: round;
   stroke-width: 8;
 }
@@ -79,10 +158,15 @@
   fill: var(--color-accent);
 }
 
-.robot-mascot__head > rect:first-child,
+.robot-mascot__head > rect:first-child {
+  fill: var(--color-robot-face);
+  stroke: var(--color-robot-shell);
+  stroke-width: 2;
+}
+
 .robot-mascot__neck,
 .robot-mascot__torso {
-  fill: #1b1b1a;
+  fill: var(--color-robot-shell);
 }
 
 .robot-mascot__head-highlight {
@@ -106,7 +190,7 @@
 .robot-mascot__chest-line {
   fill: none;
   opacity: 0.22;
-  stroke: white;
+  stroke: var(--color-robot-detail);
   stroke-linecap: round;
   stroke-width: 4;
 }
@@ -125,18 +209,18 @@
 
 .robot-mascot__arm > path {
   fill: none;
-  stroke: #1b1b1a;
+  stroke: var(--color-robot-shell);
   stroke-linecap: round;
   stroke-width: 16;
 }
 
 .robot-mascot__arm > circle {
-  fill: #1b1b1a;
+  fill: var(--color-robot-shell);
 }
 
 .robot-mascot__leg path {
   fill: none;
-  stroke: #1b1b1a;
+  stroke: var(--color-robot-shell);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 17;
@@ -157,7 +241,7 @@
 
 .robot-mascot__phone rect {
   fill: var(--color-accent);
-  stroke: #1b1b1a;
+  stroke: var(--color-robot-shell);
   stroke-width: 5;
 }
 
